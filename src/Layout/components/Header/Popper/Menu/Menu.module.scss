@@ -1,0 +1,25 @@
+.content {
+    width: 224px;
+    padding: 4px 8px;
+}
+
+// headerMenu
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+}
+
+.backBtn {
+    width: 50px;
+    height: 100% !important;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
