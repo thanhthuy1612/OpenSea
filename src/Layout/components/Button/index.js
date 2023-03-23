@@ -9,6 +9,7 @@ export default function Button({
     text = false,
     disabled = false,
     rounded = false,
+    choose = false,
     children,
     className,
     leftIcon,
@@ -46,6 +47,9 @@ export default function Button({
     }
     if (rounded) {
         classes = classes.concat(' ', `${styles.rounded}`);
+    }
+    if (choose) {
+        classes = classes.concat(' ', `${styles.choose}`);
     }
     switch (className) {
         case 'textColor':

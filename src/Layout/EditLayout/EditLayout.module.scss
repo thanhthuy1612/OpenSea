@@ -2,10 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .header {
-        position: fixed;
-    }
 }
 
 .container {
@@ -14,4 +10,8 @@
     min-height: 1000px;
     display: flex;
     margin-top: 60px;
+}
+
+.content {
+    flex: 1;
 }

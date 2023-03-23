@@ -1,7 +1,32 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleQuestion, faEarthAsia, faKeyboard } from '@fortawesome/free-solid-svg-icons';
+import { faEarthAsia, faEye, faGear, faHeart, faMoon, faPen, faTable, faUser } from '@fortawesome/free-solid-svg-icons';
 
 export const MenuItems = [
+    {
+        icon: <FontAwesomeIcon icon={faUser} />,
+        title: 'Profile',
+        to: '/account',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faHeart} />,
+        title: 'Favorite',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faEye} />,
+        title: 'Watch List',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faTable} />,
+        title: 'My Collection',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faPen} />,
+        title: 'Create',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faGear} />,
+        title: 'Setting',
+    },
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
@@ -22,12 +47,7 @@ export const MenuItems = [
         },
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        title: 'Feedback and help',
-        to: '/feedback',
-    },
-    {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
-        title: 'Keyboard shortcuts',
+        icon: <FontAwesomeIcon icon={faMoon} />,
+        title: 'Light Mode',
     },
 ];

@@ -5,6 +5,9 @@ export default function Wrapper({ children, className }) {
         case 'menu':
             classes = classes.concat(' ', `${styles.menu}`);
             break;
+        case 'search':
+            classes = classes.concat(' ', `${styles.search}`);
+            break;
         default:
             break;
     }

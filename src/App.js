@@ -2,14 +2,13 @@ import styles from './App.module.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routers';
 import DefaultLayout from './Layout/DefaultLayout';
-import { Fragment } from 'react';
 export default function App() {
     return (
         <Router>
             <div className={styles.app}>
                 <Routes>
                     {publicRoutes.map((route, index) => {
-                        const Layout = route.layout === null ? Fragment : DefaultLayout;
+                        const Layout = route.layout || DefaultLayout;
                         const Page = route.component;
                         return (
                             <Route

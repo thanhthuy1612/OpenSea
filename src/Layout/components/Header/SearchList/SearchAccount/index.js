@@ -7,8 +7,10 @@ export default function SearchAccount({ text, content, ava, icon }) {
                 <p className={styles.name}>
                     <h4>{text}</h4>
                 </p>
-                {icon && <img className={styles.icon} src={icon} alt="" />}
-                {content && <span className={styles.username}>{content}</span>}
+                <div className={styles.description}>
+                    {icon && <img className={styles.icon} src={icon} alt="" />}
+                    {content && <span className={styles.username}>{content}</span>}
+                </div>
             </div>
         </div>
     );
