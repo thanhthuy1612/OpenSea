@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import images from '~/assets/images';
 import { MyAccount } from '~/constants/MyAccount';
 import styles from './Account.module.scss';
+import { useSelector } from 'react-redux';
 
 export default function Account() {
+    const accounts = useSelector((state) => state.account.info);
     const navigate = useNavigate();
     const handleClickEdit = () => {
         navigate('/account/profile');
@@ -22,7 +24,7 @@ export default function Account() {
                     <h1 className={styles.username}>{account.username}</h1>
                     <div className={styles.wallet}>
                         <img className={styles.token} src={account.token} alt="Token" />
-                        {account.walletAddress}
+                        {accounts}
                     </div>
                 </div>
                 <div className={styles.listIcon}>

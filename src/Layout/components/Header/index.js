@@ -10,6 +10,8 @@ import { Account } from '~/constants/Account';
 import Menu from './Popper/Menu';
 import { MenuItems } from '~/constants/Menu';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setAccount } from '~/redux';
 
 export default function Header() {
     const [state, _setState] = useState({});
@@ -17,6 +19,7 @@ export default function Header() {
         _setState((prevState) => ({ ...prevState, ...data }));
     };
     const searchRef = useRef();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleClick = () => {
         navigate('/');
@@ -25,27 +28,16 @@ export default function Header() {
     const handleChange = (e) => {
         setState({ input: e.target.value });
     };
-    const requestAccount = async () => {
-        console.log('Requesting account..');
-        if (window.ethereum) {
+    const connectMetamask = async () => {
+        if (typeof window != 'undefined' && typeof window.ethereum != 'undefined') {
             try {
-                const accounts = await window.ethereum.request({
-                    method: 'eth_requestAccounts',
-                });
-                console.log(accounts[0]);
-            } catch (error) {
-                console.log('Error connecting');
+                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                dispatch(setAccount(accounts[0]));
+            } catch (err) {
+                console.error(err.message);
             }
         } else {
-            alert('MetaMask detected');
-        }
-    };
-
-    const connectWallet = async () => {
-        if (typeof window.ethereum !== 'undefined') {
-            await requestAccount();
-            //const provider = new ethers.providers.Web3Provider(window.ethereum);
-            //console.log(provider);
+            console.log('Please install Metamask');
         }
     };
 
@@ -86,7 +78,7 @@ export default function Header() {
                 </Tippy>
                 <div className={styles.listIcon}>
                     <Menu items={MenuItems} onChange={handleChangeMenu}>
-                        <button onClick={connectWallet}>
+                        <button onClick={connectMetamask}>
                             <FontAwesomeIcon className={styles.icon} icon={faUserEdit} />
                         </button>
                     </Menu>

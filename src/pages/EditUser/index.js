@@ -3,11 +3,15 @@ import Button from '~/Layout/components/Button';
 import styles from './EditUser.module.scss';
 import images from '~/assets/images';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setAccount } from '~/redux/reducer/Account';
 
 export default function EditUser() {
     const [inputs, setInputs] = useState({});
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleSubmit = (event) => {
+        dispatch(setAccount(inputs));
         event.preventDefault();
     };
     const handleChange = (event) => {
