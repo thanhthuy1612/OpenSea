@@ -11,7 +11,7 @@ import Menu from './Popper/Menu';
 import { MenuItems } from '~/constants/Menu';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setAccount } from '~/redux';
+import { setWalletAddress } from '~/redux';
 
 export default function Header() {
     const [state, _setState] = useState({});
@@ -32,16 +32,15 @@ export default function Header() {
         if (typeof window != 'undefined' && typeof window.ethereum != 'undefined') {
             try {
                 const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-                dispatch(setAccount(accounts[0]));
+                dispatch(setWalletAddress(accounts[0]));
             } catch (err) {
                 console.error(err.message);
             }
         } else {
-            console.log('Please install Metamask');
+            alert('Please install Metamask');
         }
     };
 
-    console.log(state);
     return (
         <header className={styles.wrapper}>
             <div className={styles.inner}>

@@ -7,7 +7,8 @@ import styles from './Account.module.scss';
 import { useSelector } from 'react-redux';
 
 export default function Account() {
-    const accounts = useSelector((state) => state.account.info);
+    const accounts = useSelector((state) => state.account.walletAddress);
+    console.log(accounts);
     const navigate = useNavigate();
     const handleClickEdit = () => {
         navigate('/account/profile');

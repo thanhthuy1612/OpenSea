@@ -1,0 +1,17 @@
+.button {
+    width: 250px;
+    height: 250px;
+}
+.buttonImg {
+    width: 100%;
+    height: 200px;
+}
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    .time,
+    .price {
+        display: flex;
+        flex-direction: column;
+    }
+}

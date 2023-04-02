@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     info: {},
+    walletAddress: '',
 };
 
 export const account = createSlice({
@@ -11,9 +12,12 @@ export const account = createSlice({
         setAccount: (state, action) => {
             state.info = action.payload;
         },
+        setWalletAddress: (state, action) => {
+            state.walletAddress = action.payload;
+        },
     },
 });
 const accountReducer = account.reducer;
 
-export const { setAccount } = account.actions;
+export const { setAccount, setWalletAddress } = account.actions;
 export default accountReducer;
