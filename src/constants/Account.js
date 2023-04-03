@@ -6,25 +6,25 @@ export const Account = [
             {
                 text: '123',
                 content: '123',
-                ava: images.ava1,
+                ava: images.ava2,
                 icon: images.ethereum,
             },
             {
                 text: '123',
                 content: '123',
-                ava: images.ava1,
+                ava: images.ava2,
                 icon: images.ethereum,
             },
             {
                 text: '123',
                 content: '123',
-                ava: images.ava1,
+                ava: images.ava2,
                 icon: images.ethereum,
             },
             {
                 text: '123',
                 content: '123',
-                ava: images.ava1,
+                ava: images.ava2,
                 icon: images.ethereum,
             },
         ],
@@ -35,17 +35,17 @@ export const Account = [
             {
                 text: '1234',
                 content: '123',
-                ava: images.ava1,
+                ava: images.ava2,
             },
             {
                 text: '1234',
                 content: '123',
-                ava: images.ava1,
+                ava: images.ava2,
             },
             {
                 text: '1234',
                 content: '123',
-                ava: images.ava1,
+                ava: images.ava2,
             },
         ],
     },
@@ -55,18 +55,22 @@ export const Account = [
             {
                 text: '123',
                 content: '123',
+                ava: images.ava2,
             },
             {
                 text: '123',
                 content: '123',
+                ava: images.ava2,
             },
             {
                 text: '123',
                 content: '123',
+                ava: images.ava2,
             },
             {
                 text: '123',
                 content: '123',
+                ava: images.ava2,
             },
         ],
     },

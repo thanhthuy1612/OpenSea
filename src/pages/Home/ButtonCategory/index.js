@@ -1,24 +1,28 @@
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import images from '~/assets/images';
 import styles from './ButtonCategory.module.scss';
 
-export default function ButtonCategory() {
+export default function ButtonCategory({ title, img, item, price, ...passProps }) {
+    const props = {
+        ...passProps,
+    };
     return (
-        <button className={styles.button}>
-            <img className={styles.buttonImg} src={images.ava} alt="images" />
+        <button className={styles.button} {...props}>
+            <img className={styles.buttonImg} src={img} alt="images" />
             <div className={styles.title}>
-                <span>Title</span>
-                <FontAwesomeIcon icon={faCheckCircle} />
-            </div>
-            <div className={styles.content}>
-                <div className={styles.time}>
-                    <span>STARTS</span>
-                    <span>Apr 6</span>
+                <div className={styles.titleHeader}>
+                    <span className={styles.titleText}>{title}</span>
+                    <FontAwesomeIcon className={styles.titleIcon} icon={faCheckCircle} />
                 </div>
-                <div className={styles.price}>
-                    <span>PRICE</span>
-                    <span>6 ETH</span>
+                <div className={styles.content}>
+                    <div className={styles.time}>
+                        <span className={styles.text}>STARTS</span>
+                        <span className={styles.item}>{item}</span>
+                    </div>
+                    <div className={styles.price}>
+                        <span className={styles.text}>PRICE</span>
+                        <span className={styles.item}>{price}</span>
+                    </div>
                 </div>
             </div>
         </button>

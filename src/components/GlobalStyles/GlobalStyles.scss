@@ -15,6 +15,7 @@
     --default-choose: #f2f2f2;
     --default-choose-hover: rgba(22, 24, 35, 0.03);
     --default-blue: rgb(46, 142, 238);
+    --default-gray: #ccc;
 }
 
 * {
@@ -46,7 +47,7 @@ input,
     border: none;
 }
 
-a[hef] {
+a[href] {
     color: var(--text-color);
     text-decoration: none;
 }
